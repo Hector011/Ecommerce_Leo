@@ -15,6 +15,20 @@
     font-family: "roboto", sans-serif;
 }
 
+*::-webkit-scrollbar {
+    width: 12px;
+  }
+  
+  *::-webkit-scrollbar-track {
+    background: var(--color-secundario);
+  }
+  
+  *::-webkit-scrollbar-thumb {
+    background-color: var(--color-principal);
+    border-radius: 20px;
+    border: 3px solid #2721219e;
+  }
+
 img {
     width: 100%;
     display: block;
@@ -51,7 +65,28 @@ a {
 .bx-grid-alt {
     cursor: pointer;
     font-size: 2rem;
-    color: #363333ca;
+    color: var(--color-terciario);
+}
+
+.bx-cart {
+    position: relative;
+}
+
+.amounCart {
+    position: absolute;
+    display: inline-block;
+
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    bottom: 17px;
+    right: 68px;
+
+    background-color: #363333d4;
+    color: var(--color-cuarteabo);
+    font-size: 0.8rem;
+    font-weight: bold;
+    text-align: center;
 }
 
 /* Navbar */
@@ -91,7 +126,7 @@ a {
 }
 
 .menu {
-    background-color: rgb(250, 198, 211);
+    background-color: var(--color-cuarteabo);
     position: fixed;
     top: 0;
     width: 100vw;
@@ -104,6 +139,7 @@ a {
     right: -150%;
 
     transition: right 0.6s;
+    font-size: 18px;
 }
 
 .casa {
@@ -172,7 +208,7 @@ a {
     background: rgb(30, 29, 29);
     color: #fff;
     cursor: pointer;
-    transition: 0.5;
+    transition: 0.3s;
 }
 
 .home__info-buttons button:nth-child(1):hover{
@@ -181,7 +217,7 @@ a {
 }
 
 .home__info-buttons button:nth-child(2):hover {
-    background-color: #e94959;
+    background-color: var(--color-principal);
 }
 
 /* ECOMMERCE */
@@ -272,7 +308,7 @@ a {
 
 .contentCar {
     height: calc(100vh - 50px);
-    width: 30vw;
+    width: 300px;
     top: 50px;
     right: 0;
     position: fixed;
@@ -287,16 +323,78 @@ a {
     transform: translate(0%);
 }
 
+
+
+ /* CARPRODUCT */
+
 .carProducts {
+    display: flex;
     height: 80%;
     background-color: #272121;
+    color: var(--color-terciario);
+    padding: 1rem;
+    flex-direction: column;
+    overflow-y: scroll;
+    font-size: 18px;
+    gap: 1rem;
+}
 
+.product1 {
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+    text-align: center;
+    justify-content: space-between;
+    background-color: var(--color-cuarteabo);
+    border-radius: 1rem;
+    font-size: 20px;
+}
+
+.carProducts .products__img {
+    width: 55%;
+    background-color: var(--color-principal);
+}
+
+.product__info1{
+    display: flex;
+    flex-direction: column;
 }
 
 .carTotal {
     height: 20%;
     background-color: #F6E9E9;
+    padding: 1rem;
+    display: flex;
+ 
+    justify-content: center;
+    align-items: center;
+    border-radius: 1rem;
+    gap: 1rem;
+    flex-direction: column;
+}
 
+.cart__add1{
+    cursor: pointer;
+}
+
+.btn__buy {
+    background-color: var(--color-terciario);
+    width: 100%;
+    color: var(--color-cuarteabo);
+    border-radius: 1rem;
+    cursor: pointer;
+}
+
+
+.bx-plus:hover {
+    color: rgb(14, 116, 14);
+    transition: 0.5;
+}
+
+.bx-minus:hover,
+.bxs-trash:hover {
+    color: red;
+    transition: 0.5s;
 }
 
 /* FOOTER*/
@@ -355,6 +453,11 @@ footer p{
 
     .navbar__icons {
         margin-left: auto;
+    }
+
+    .amounCart {
+        bottom: 20px;
+        right: 28px;
     }
 
     .menu {
